@@ -1,6 +1,5 @@
-<div>
-    <input type="text" [(ngModel)]="title" placeholder="Titulo de la Tarea" required>
-    <textarea rows="4" cols="4"  [(ngModel)]="description" placeholder="Añade la Extension" required></textarea>
-    <button type="button" (click)="addTasks()">Agregar Tarea</button>
-
+<div class="flex gap-5 w-full flex-col my-5 justify-center items-center" >
+    <input class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"  type="text" [(ngModel)]="title" placeholder="Titulo de la Tarea" required>
+    <textarea name="message" id="message" rows="4" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" [(ngModel)]="description" placeholder="Añade la Extension" required></textarea>
+    <button class="block w-full bg-red-700 rounded-md px-4 py-1 text-white hover:bg-red-500 " type="button" (click)="addTasks()">Agregar Tarea</button>
 </div>

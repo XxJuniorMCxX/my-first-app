@@ -7,29 +7,26 @@ import { TaskService } from '../task.service';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './task-input.component.html',
-  styleUrl: './task-input.component.css'
+  styleUrl: './task-input.component.css',
 })
 export class TaskInputComponent {
-  title:string = '';
+  title: string = '';
 
-  description:string='';
+  description: string = '';
 
-constructor(private taskService:TaskService){}
+  constructor(private taskService: TaskService) {}
 
-addTasks():void{
+  addTasks(): void {
+    if (this.title.trim() && this.description.trim()) {
+      console.log(this.title);
+      console.log(this.description);
+      console.log('Se añadio Correctamente');
 
-  if(this.title.trim() && this.description.trim()){
-    console.log(this.title);
-    console.log(this.description);
-    console.log("Se añadio Correctamente")
-    
-    
-    this.taskService.addTask(this.title,this.description);
-    this.title='';
-    this.description="";
+      this.taskService.addTask(this.title, this.description);
+      this.title = '';
+      this.description = '';
+    } else {
+      console.log('Llenar el Formulario');
+    }
   }
-
-}
-  
-
 }
